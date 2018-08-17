@@ -26,6 +26,7 @@ namespace NBA.Client
 
         public NBAClient()
         {
+            BaseAddress = new Uri("https://nba-players.herokuapp.com");
             _client.DefaultRequestHeaders.Accept.Clear();
             _client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));

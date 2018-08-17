@@ -6,8 +6,7 @@ namespace NBA.DataCreator
 {
     public class NBAPlayerContext : DbContext
     {
-        public DbSet<Player> Player { get; set; }
-
+        public DbSet<PlayerDB> Player { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -18,7 +17,7 @@ namespace NBA.DataCreator
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Player>(entity =>
+            modelBuilder.Entity<PlayerDB>(entity =>
             {
                 entity.HasKey(p => p.Id);
                 entity.Property(p => p.name).IsRequired();

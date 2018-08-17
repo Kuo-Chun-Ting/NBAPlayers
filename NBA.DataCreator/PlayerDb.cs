@@ -4,7 +4,7 @@ using System.Text;
 
 namespace NBA.DataCreator
 {
-    public class Player
+    public class PlayerDB
     {
         public string Id { get; set; }
         public string name { get; set; }
