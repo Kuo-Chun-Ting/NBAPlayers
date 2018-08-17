@@ -10,6 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\NBA.Client\NBA.Client.csproj" />
     <ProjectReference Include="..\NBA.Model\NBA.Model.csproj" />
   </ItemGroup>
 

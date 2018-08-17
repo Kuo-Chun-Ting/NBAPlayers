@@ -15,23 +15,29 @@ namespace NBA.DataCreator.Test
 
             try
             {
-                Mapper.Initialize(config =>
-                    {
-                        config.CreateMap<Player, PlayerDB>();
-                    });
-
-                NBAClient client = new NBAClient();
-                var players = await client.GetPlayersAsync();
-                using (var context = new NBAPlayerContext())
+                DbOperator oper = new DbOperator();
+                var result = await oper.PourData();
+                if (result)
                 {
-                    foreach (var p in players)
-                    {
-                        var playerDB = Mapper.Map<Player, PlayerDB>(p);
-                        playerDB.Id = Guid.NewGuid().ToString();
-                        context.Player.Add(playerDB);
-                    }
-                    await context.SaveChangesAsync();
+                    WriteMsg("Success!!!");
                 }
+                //Mapper.Initialize(config =>
+                //    {
+                //        config.CreateMap<Player, PlayerDB>();
+                //    });
+
+                //NBAClient client = new NBAClient();
+                //var players = await client.GetPlayersAsync();
+                //using (var context = new NBAPlayerContext())
+                //{
+                //    foreach (var p in players)
+                //    {
+                //        var playerDB = Mapper.Map<Player, PlayerDB>(p);
+                //        playerDB.Id = Guid.NewGuid().ToString();
+                //        context.Player.Add(playerDB);
+                //    }
+                //    await context.SaveChangesAsync();
+                //}
             }
             catch (Exception e)
             {
