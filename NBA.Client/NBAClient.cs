@@ -1,9 +1,8 @@
 ﻿using System;
 
-namespace NBA.DataCreator
+namespace NBA.Client
 {
     public class Class1
     {
-
     }
 }
