@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NBA.WebAPI", "NBA.WebAPI\NB
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NBA.Client", "NBA.Client\NBA.Client.csproj", "{84B17424-7ADA-44DD-9F2C-A1A94625DB7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NBA.Client.Test", "NBA.Client.Test\NBA.Client.Test.csproj", "{7DF4D293-F33E-42DD-B4F7-FB7E1D43DD6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NBA.Client.Test", "NBA.Client.Test\NBA.Client.Test.csproj", "{7DF4D293-F33E-42DD-B4F7-FB7E1D43DD6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NBA.EFCore", "NBA.EFCore\NBA.EFCore.csproj", "{95FE0BBC-7AFC-4496-9581-6050E2D3FAF7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NBA.EFCore", "NBA.EFCore\NBA.EFCore.csproj", "{95FE0BBC-7AFC-4496-9581-6050E2D3FAF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NBA.EFCore.OfficialProvider", "NBA.EFCore.OfficialProvider\NBA.EFCore.OfficialProvider.csproj", "{5C003D75-8B0C-41DB-98D1-7537F001F980}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{95FE0BBC-7AFC-4496-9581-6050E2D3FAF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95FE0BBC-7AFC-4496-9581-6050E2D3FAF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95FE0BBC-7AFC-4496-9581-6050E2D3FAF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C003D75-8B0C-41DB-98D1-7537F001F980}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C003D75-8B0C-41DB-98D1-7537F001F980}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C003D75-8B0C-41DB-98D1-7537F001F980}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C003D75-8B0C-41DB-98D1-7537F001F980}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
