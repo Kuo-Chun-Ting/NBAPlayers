@@ -31,13 +31,13 @@ namespace NBA.Client
                 new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        public void ShowPlayer(PlayerFromOpen player)
+        public void ShowPlayer(PlayerOriginModel player)
         {
             Console.WriteLine($"Name: {player.name}\tTeam: " +
                 $"{player.team_name}\tTeamAcronym: {player.team_acronym}");
         }
 
-       public async Task<Uri> CreatePlayerAsync(PlayerFromOpen player)
+       public async Task<Uri> CreatePlayerAsync(PlayerOriginModel player)
         {
             HttpResponseMessage response = await _client.PostAsJsonAsync(
                 "api/Players", player);
@@ -47,25 +47,25 @@ namespace NBA.Client
             return response.Headers.Location;
         }
 
-        public async Task<List<PlayerFromOpen>> GetPlayersAsync()
+        public async Task<List<PlayerOriginModel>> GetPlayersAsync()
         {
-           List<PlayerFromOpen> players = null;
+           List<PlayerOriginModel> players = null;
             HttpResponseMessage response = await _client.GetAsync("/players-stats");
             if (response.IsSuccessStatusCode)
             {
-                players = await response.Content.ReadAsAsync<List<PlayerFromOpen>>();
+                players = await response.Content.ReadAsAsync<List<PlayerOriginModel>>();
             }
             return players;
         }
 
-        public async Task<PlayerFromOpen> UpdatePlayerAsync(PlayerFromOpen Player)
+        public async Task<PlayerOriginModel> UpdatePlayerAsync(PlayerOriginModel Player)
         {
             HttpResponseMessage response = await _client.PutAsJsonAsync(
                 $"api/Players/{Player.name}", Player);
             response.EnsureSuccessStatusCode();
 
             // Deserialize the updated Player from the response body.
-            Player = await response.Content.ReadAsAsync<PlayerFromOpen>();
+            Player = await response.Content.ReadAsAsync<PlayerOriginModel>();
             return Player;
         }
 

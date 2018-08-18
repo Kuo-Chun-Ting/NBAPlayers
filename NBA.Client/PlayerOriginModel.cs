@@ -4,7 +4,7 @@ using System.Text;
 
 namespace NBA.Client
 {
-    public class PlayerFromOpen
+    public class PlayerOriginModel
     {
         public string name { get; set; }
         public string team_acronym { get; set; }
