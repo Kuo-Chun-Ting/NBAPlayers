@@ -5,13 +5,14 @@ using System.Text;
 
 namespace NBA.EFCore
 {
-    public class NBAContext : DbContext
+    public class TestContext : DbContext
     {
         public DbSet<PlayerModel> Players { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySQL("server=localhost;database=nba;user=root;password=lillard1611005");
+            //optionsBuilder.UseMySQL("server=localhost;database=test;user=root;password=lillard1611005");
+            optionsBuilder.UseMySql("server=localhost;database=nba;uid=root;pwd=lillard1611005");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

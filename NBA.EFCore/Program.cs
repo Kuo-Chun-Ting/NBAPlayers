@@ -7,14 +7,22 @@ namespace NBA.EFCore
     {
         static void Main(string[] args)
         {
-            InsertData();
-            Console.WriteLine("Success!");
+            try
+            {
+                InsertData();
+                Console.WriteLine("Success!");
+            }
+            catch (Exception e)
+            {
+
+                WriteMsg(e.ToString());
+            }
             Console.ReadKey();
         }
 
         private static void InsertData()
         {
-            using (var context = new NBAContext())
+            using (var context = new TestContext())
             {
                 // Creates the database if not exists
                 context.Database.EnsureCreated();
