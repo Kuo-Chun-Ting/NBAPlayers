@@ -1,12 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using NBA.Model;
 using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace NBA.DataCreator
+namespace NBA.EFCore
 {
-    public class NBAPlayerContext : DbContext
+    public class NBAContext : DbContext
     {
-        public DbSet<PlayerDB> Player { get; set; }
+        public DbSet<PlayerModel> Players { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -17,9 +18,9 @@ namespace NBA.DataCreator
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<PlayerDB>(entity =>
+            modelBuilder.Entity<PlayerModel>(entity =>
             {
-                entity.HasKey(p => p.Id);
+                entity.HasKey(p => p.id);
                 entity.Property(p => p.name).IsRequired();
             });
         }

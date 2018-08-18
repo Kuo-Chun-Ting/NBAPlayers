@@ -1,14 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace NBA.Model
+namespace NBA.Client
 {
-
-    public class Rootobject
-    {
-        public Player[] Players { get; set; }
-    }
-
-    public class Player
+    public class PlayerFromOpen
     {
         public string name { get; set; }
         public string team_acronym { get; set; }
@@ -32,5 +28,4 @@ namespace NBA.Model
         public string turnovers_per_game { get; set; }
         public string player_efficiency_rating { get; set; }
     }
-
 }

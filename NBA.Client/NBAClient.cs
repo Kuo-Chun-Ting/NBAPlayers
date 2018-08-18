@@ -1,5 +1,4 @@
-﻿using NBA.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
@@ -32,13 +31,13 @@ namespace NBA.Client
                 new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        public void ShowPlayer(Player player)
+        public void ShowPlayer(PlayerFromOpen player)
         {
             Console.WriteLine($"Name: {player.name}\tTeam: " +
                 $"{player.team_name}\tTeamAcronym: {player.team_acronym}");
         }
 
-       public async Task<Uri> CreatePlayerAsync(Player player)
+       public async Task<Uri> CreatePlayerAsync(PlayerFromOpen player)
         {
             HttpResponseMessage response = await _client.PostAsJsonAsync(
                 "api/Players", player);
@@ -48,25 +47,25 @@ namespace NBA.Client
             return response.Headers.Location;
         }
 
-        public async Task<List<Player>> GetPlayersAsync()
+        public async Task<List<PlayerFromOpen>> GetPlayersAsync()
         {
-           List<Player> players = null;
+           List<PlayerFromOpen> players = null;
             HttpResponseMessage response = await _client.GetAsync("/players-stats");
             if (response.IsSuccessStatusCode)
             {
-                players = await response.Content.ReadAsAsync<List<Player>>();
+                players = await response.Content.ReadAsAsync<List<PlayerFromOpen>>();
             }
             return players;
         }
 
-        public async Task<Player> UpdatePlayerAsync(Player Player)
+        public async Task<PlayerFromOpen> UpdatePlayerAsync(PlayerFromOpen Player)
         {
             HttpResponseMessage response = await _client.PutAsJsonAsync(
                 $"api/Players/{Player.name}", Player);
             response.EnsureSuccessStatusCode();
 
             // Deserialize the updated Player from the response body.
-            Player = await response.Content.ReadAsAsync<Player>();
+            Player = await response.Content.ReadAsAsync<PlayerFromOpen>();
             return Player;
         }
 

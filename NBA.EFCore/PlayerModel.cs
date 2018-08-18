@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace NBA.DataCreator
+namespace NBA.EFCore
 {
-    public class PlayerDB
+    public class PlayerModel
     {
-        public string Id { get; set; }
+        public string id { get; set; }
+        public string Addition { get; set; }
         public string name { get; set; }
         public string team_acronym { get; set; }
         public string team_name { get; set; }
