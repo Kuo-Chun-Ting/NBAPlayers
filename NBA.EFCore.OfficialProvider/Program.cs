@@ -25,6 +25,7 @@ namespace NBA.EFCore.OfficialProvider
             {
                 // Creates the database if not exists
                 context.Database.EnsureCreated();
+                 
 
                 // Adds a publisher
                 var player = new PlayerModel
