@@ -2,9 +2,9 @@
 using System;
 using System.Collections.Generic;
 
-namespace NBA.EFCore.OfficialProvider.Migrations
+namespace NBA.Repository.OfficialMysql.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

@@ -12,7 +12,7 @@ namespace NBA.EFCore
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //optionsBuilder.UseMySQL("server=localhost;database=test;user=root;password=lillard1611005");
-            optionsBuilder.UseMySql("server=localhost;database=nba;uid=root;pwd=lillard1611005");
+            optionsBuilder.UseMySql("server=localhost;database=nba_pomelo;uid=root;pwd=lillard1611005");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

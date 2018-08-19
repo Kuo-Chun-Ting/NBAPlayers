@@ -1,18 +1,17 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using NBA.Repository.Model;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace NBA.EFCore.OfficialProvider
+namespace NBA.Repository.PomeloMysql
 {
-    public class TestContext : DbContext
+    public class PlayerContext : DbContext
     {
         public DbSet<PlayerModel> Players { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySQL("server=localhost;database=nba_official;user=root;password=lillard1611005");
-            //optionsBuilder.UseMySql("server=localhost;database=nba;uid=root;pwd=lillard1611005");
+            //optionsBuilder.UseMySQL("server=localhost;database=test;user=root;password=lillard1611005");
+            optionsBuilder.UseMySql("server=localhost;database=nba_pomelo;uid=root;pwd=lillard1611005");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
