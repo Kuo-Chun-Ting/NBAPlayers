@@ -19,6 +19,12 @@ namespace NBA.WebAPI
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
+            .ConfigureAppConfiguration((hostContext, config) =>
+            {
+                var env = hostContext.HostingEnvironment;
+                config.SetBasePath(Path.Combine(env.ContentRootPath, "Configuration"))
+                      .AddJsonFile(path: "appsettings.json", optional: false, reloadOnChange: true);
+            })
+            .UseStartup<Startup>();
     }
 }
